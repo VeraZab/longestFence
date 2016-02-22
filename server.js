@@ -1,6 +1,5 @@
 var http = require('http');
-process.env.PWD = process.cwd();
-var onRequest = require(process.env.PWD+'/routes');
+var onRequest = require(process.cwd()+'/routes');
 
 var port = process.argv[2] || 8888;
 

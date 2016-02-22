@@ -1,14 +1,9 @@
 var http = require('http');
-var onRequest = require(process.cwd()+'/routes');
-
-var port = process.argv[2] || 8888;
+var onRequest = require('./routes');
 
 function start(){
-	http.createServer(onRequest).listen(port);
+	http.createServer(onRequest).listen(8888);
 	console.log("Server has started.");
 }
-console.log(process.argv[2]);
-console.log(process.cwd());
-console.log(port);
 
 module.exports = start;

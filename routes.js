@@ -40,6 +40,3 @@ function onRequest(request, response) {
 };
 
 module.exports = onRequest;
-
-//but not caching because always 200 or is it me that has to change that, 
-//and not showing my image downloads in network..

@@ -3,26 +3,54 @@ body {
 	height: 100%;
 	margin: 0 0 0 0;
 	overflow: hidden;
+	background-color: #c0c1b5;
+}
+
+html {
+	background-color: #c0c1b5;
 }
 
 p{
-	margin-top: 50px;
 	text-align: center;
 	font-family: 'Helvetica';
-	font-size: 33px;
-	
+	font-size: 50px;	
+	color: white;
 }
 
 #marker {
-	color: orange;
+	padding-top: 20px;
+	color: black;
 	margin: 0 auto;
 	width: 1px;
 	height: 10px;
-	margin-top: 20%;
 }
 
 #images{
-	margin-top:20%;
+	margin-top:10%;
 	height: 200px;
 	width: 10000000px;
+}
+
+#globesvg{
+	display: inline-block;
+	height: 100px;
+	width: 200px;
+}
+
+#globe {
+	margin: 0 auto;
+	height: 100px;
+	width: 200px;
+}
+
+.graticule {
+  fill: white;
+}
+
+.land {
+  fill: white;
+}
+
+.boundary {
+  fill: white;
 }

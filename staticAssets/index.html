@@ -1,17 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title></title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./staticAssets/stylesheets/style.css">
-        <script src='./staticAssets/scripts/bundle.js'></script>
-        <link href='./staticAssets/images'>
+        <meta charset='utf-8'>
+        <title>Responsive Grid</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' href='/staticAssets/stylesheets/style.css'>
+        <script src='/staticAssets/scripts/preload.js'></script>
     </head>
-    <body>    
-        <p>World's Longest Fence</p>
-        <div id='images'><span id='lead'></span></div>
-        <div id='marker'>|</div>
-        <div id='globe'></div>
+    <body>
+    	<div id='header'>
+            <div id='search'>
+                <input placeholder="Search Country"></input>
+            </div>
+        </div>
+    	<div id='container'>
+    		<div id='fences'></div>
+    	</div>
+    	<div id='menu'>
+            <div id='controls'>
+                <button id='add'>+</button>
+                <button id='substract'>-</button>
+            </div>
+        </div>
+        <script src='/staticAssets/scripts/bundle.js'></script>
     </body>
 </html>

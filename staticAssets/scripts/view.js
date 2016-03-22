@@ -1,12 +1,13 @@
 var controller = require('./controller');
 
 var view = {
-	init: function(y){
+	init: function(){
 
-		controller.prepareInfiniteScroll(y);
+		controller.prepareInfiniteScroll();
 
 		document.getElementById('fences').addEventListener('scroll', function(){
-			controller.userScrolling();
+			controller.clearSelection();
+			controller.scrolling();
 		});
 
 		document.getElementsByTagName('input')[0].addEventListener('keydown', function(e){

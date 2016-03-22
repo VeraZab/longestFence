@@ -6,7 +6,8 @@ fileExtensions = {
     '.html':'text/html',
     '.css':'text/css',
     '.js':'text/javascript',
-    '.jpg':'image/jpg'
+    '.jpg':'image/jpg',
+    '.ttf': 'font/opentype'
 };
 
 function determineType(ext){
@@ -28,13 +29,13 @@ function onRequest(request, response) {
 			response.writeHead(200, {"Content-Type": "text/html"});
 			fs.createReadStream('./staticAssets/index.html').pipe(response);
 		} else {
-			var ext = path.extname('.'+pathname);
+			var ext = path.extname('./staticAssets'+pathname);
 
-			fs.access('.'+pathname, fs.R_OK, function(error){
+			fs.access('./staticAssets'+pathname, fs.R_OK, function(error){
 				if(error){console.log('file does not exist')};
 				response.writeHead(200, {'Content-Type': determineType(ext)});
-				fs.createReadStream('.'+pathname).pipe(response);
-				console.log('served '+request.url);	
+				fs.createReadStream('./staticAssets'+pathname).pipe(response);
+				console.log('served '+request.url);
 			})
 		}
 };

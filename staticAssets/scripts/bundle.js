@@ -1,26 +1,26 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.controller = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var model = require('./model');
 
 var controller = {
 	init: function(){
 		var view = require('./view');
-		view.init(20);
+		view.init();
 	},
-	prepareInfiniteScroll: function(y){
+	prepareInfiniteScroll: function(){
+
 		var slider = document.getElementById('fences');
 
-		for(var x = 0; x<=y; x++){
+		for(var x = 1; x<=20; x++){
 			createImage(x);
 		};
 
 		function createImage(x){
-			var img = document.createElement('div');
-			img.setAttribute('class', 'image');
-			img.classList.add('original');
+			var picture = document.createElement('img');
+			picture.src = '/images/'+x+'.png';
+			picture.classList.add('original');
 			var uniqueClass = getImageClass(x);
-			img.classList.add(uniqueClass);
-			img.innerHTML = x;
-			slider.appendChild(img);
+			picture.classList.add(uniqueClass);
+			slider.appendChild(picture);
 		};
 
 		function getImageClass(x){
@@ -37,13 +37,12 @@ var controller = {
 
 		this.appendClones();
 
-		var startImage = document.getElementsByClassName('0')[0];
-		this.scrollTo('init', startImage);
+		var position = document.getElementsByClassName('original')[0].offsetLeft;
+		this.scrolling(position);
 	},
-	appendClones: function(){
+	appendClones: function(selectedImage){
 		var slider = document.getElementById('fences');
-		var images = document.getElementsByClassName('image');
-		var imageSize = images[0].clientWidth;
+		var imageSize = document.images[0].clientWidth;
 		var numImagesPerPage = Math.round(slider.offsetWidth/imageSize)+1;
 		var lastOriginalImageIndex = document.getElementsByClassName('original').length-1;
 		var lastCloneIndex = lastOriginalImageIndex-numImagesPerPage;
@@ -51,9 +50,15 @@ var controller = {
 		var originals = document.getElementsByClassName('original');
 
 		function createClone(x){
+			var imageClass = originals[x].classList[1];;
 			var clone = originals[x].cloneNode(true);
-			clone.classList.remove('original');
-			clone.classList.add('clone');
+			clone.removeAttribute('class');
+			clone.setAttribute('class', 'clone '+imageClass);
+
+			if(selectedImage!==undefined&&selectedImage.classList.contains('clone')){
+				clone.classList.add('selected');
+			}
+
 			return clone;
 		}
 
@@ -64,33 +69,23 @@ var controller = {
 		for(var x = lastOriginalImageIndex; x>lastCloneIndex; x--){
 			slider.insertBefore(createClone(x), slider.childNodes[0]);
 		}
-	},
-	userScrolling: function(){
-		var slider = document.getElementById('fences');
-		var clones = document.getElementsByClassName('clone');
-		var originals = document.getElementsByClassName('original');
-		var end = Math.round(slider.scrollWidth-slider.offsetWidth);
 
-		this.clearSelection();
-
-		if(slider.scrollLeft === 0){
-			var cloneClass = clones[0].classList[1];
-			var targetImage = document.getElementsByClassName(cloneClass)[1];
-			this.scrollTo('scroll', targetImage);
-		}else if(slider.scrollLeft === end){
-			var targetImage = clones[clones.length-1];
-			this.scrollTo('scroll', targetImage);
-		}
 	},
 	changeImageSize: function(change){
-		var images = document.getElementsByClassName('image');
-		var imageWidth = images[0].clientWidth;
-		var imageHeight = images[0].clientHeight;
+		var images = document.images;
 		var largest = document.getElementById('container').clientHeight;
 		var smallest = 60;
-		var ratio;
-		var targetHeight;
-		var targetWidth;
+		var selected = document.getElementsByClassName('selected');
+		var ratio, targetHeight, targetWidth, imageHeight, imageWidth;
+		var selectedImage = [];
+
+		if(images[0].classList.contains('selected')){
+			imageHeight = images[1].clientHeight;
+			imageWidth = images[1].clientWidth;
+		}else{
+			imageHeight = images[0].clientHeight;
+			imageWidth = images[0].clientWidth;
+		}
 
 		if(change==='add'){
 			ratio = 1.5;
@@ -99,6 +94,7 @@ var controller = {
 				targetHeight=largest;
 				ratio = targetHeight/imageHeight;
 			}
+
 		}else if(change==='substract'){
 			ratio = 0.75;
 			targetHeight = imageHeight*ratio;
@@ -113,14 +109,16 @@ var controller = {
 		for(var x=0; x<images.length; x++){
 			images[x].style.width = targetWidth+'px';
 			images[x].style.height = targetHeight+'px';
+			if(images[x].classList.contains('selected')){
+				selectedImage.push(images[x]);
+			}
 		}
 
-		this.appendClones();
+		this.appendClones(selectedImage[0]);
 
-		var selectedImage = document.getElementsByClassName('selected');
-
-		if(selectedImage.length === 1){
-			this.scrollTo('resize', selectedImage[0]);
+		if(document.getElementsByClassName('selected').length){
+			position = this.centeredPosition(document.getElementsByClassName('selected')[0]);
+			this.scrolling(position);
 		}
 	},
 	findSearchedCountry: function(e, v){
@@ -128,86 +126,103 @@ var controller = {
 
 		if(e.keyCode === 13){
 		 	document.getElementsByTagName('input')[0].value = '';
-		 	var images = document.getElementsByClassName('image');
 		 	var selectedCountry = document.getElementsByClassName(v.toLowerCase())[0];
 		 	this.focussing(selectedCountry);
 		}
 		//else fuzzy search
 	},
+	clonesCenteringAdjustmentNeeded: function(img){
+		var images = document.images;
+		var index = Array.prototype.indexOf.call(images, img);
+		var middleClone = document.getElementsByClassName('clone').length/2;
+		if(index<=middleClone){
+			return true;
+		}else{
+			return false;
+		}
+	},
 	focussing: function(x){
-		var images = document.getElementsByClassName('image');
-		var indexOfSelectedImage = Array.prototype.indexOf.call(images, x);
-		x.classList.add('selected');
-		this.scrollTo('focussing', x);
-		var link = model.sources[indexOfSelectedImage];
+		this.clearSelection();
+		var imageClass= x.classList[2];
+		var images = document.images;
+		var originals = document.getElementsByClassName('original');
+		var indexOfSelectedImageInFullArray = Array.prototype.indexOf.call(images, x);
+		var indexOfSelectedImageInOriginalsArray;
+		var position;
+		var image;
+
+		if(x.classList.contains('clone')){
+			var originalImage = document.getElementsByClassName(imageClass)[1];
+			var index = Array.prototype.indexOf.call(originals, originalImage);
+			indexOfSelectedImageInOriginalsArray = index;
+
+			if(this.clonesCenteringAdjustmentNeeded(x)){
+				image = document.getElementsByClassName(imageClass)[1];
+
+			}else{
+				image = x;
+			}
+		}else{
+			image = x;
+			var index = Array.prototype.indexOf.call(originals, image);
+			indexOfSelectedImageInOriginalsArray = index;
+		}
+
+		position = this.centeredPosition(image);
+		this.scrolling(position);
+
+		var link = model.sources[indexOfSelectedImageInOriginalsArray];
 		console.log(link);
 	},
-	scrollTo: function(trigger, image){
-		var images = document.getElementsByClassName('image');
-		var indexOfImage = Array.prototype.indexOf.call(images, image);
+	scrolling: function(position){
 		var slider = document.getElementById('fences');
-		var imageClass = image.classList[2];
-		var position;
+		var clones = document.getElementsByClassName('clone');
+		var originals = document.getElementsByClassName('original');
+		var end = Math.round(slider.scrollWidth-slider.offsetWidth);
+		var images = document.images;
 
-		function clonesCenteringAdjustmentNeeded(){
-			var middleClone = document.getElementsByClassName('clone').length/2;
-			if(indexOfImage<=middleClone&&indexOfImage!==-1){
-				//check why that -1 is needed
-				return true;
-			}else{
-				return false;
+		function userScroll(){
+
+			if(slider.scrollLeft === 0){
+				var cloneClass = clones[0].classList[2];
+				var targetImage = document.getElementsByClassName(cloneClass)[1];
+				position = targetImage.offsetLeft;
+				slider.scrollLeft = position;
+			}else if(slider.scrollLeft === end){
+				var targetImage = clones[clones.length-1];
+				var imageSize = targetImage.clientWidth;
+				position = (targetImage.offsetLeft)-(slider.offsetWidth-imageSize);
+				slider.scrollLeft = position;
 			}
-		};
+		}
 
-		function centeredPosition(x){
-			var windowMiddle = (slider.offsetWidth)/2;
-			var imageHalfWidth = (x.clientWidth)/2;
-			var position = (x.offsetLeft)-windowMiddle+imageHalfWidth;
-			return position;
-		};
+		function appScroll(){
+			slider.scrollLeft = position;
+		}
 
-		switch(trigger){
-			case 'focussing':
-				if(clonesCenteringAdjustmentNeeded()){
-					image = document.getElementsByClassName(imageClass)[1];
-				}
-
-				image.classList.toggle('ignoreScrollMarker');
-				position = centeredPosition(image);
-				slider.scrollLeft = position;
-				image.classList.toggle('ignoreScrollMarker');
-				break;
-			case 'resize':
-				image.classList.toggle('ignoreScrollMarker');
-				position = centeredPosition(image);
-				slider.scrollLeft = position;
-				image.classList.toggle('ignoreScrollMarker');
-				break;
-			case 'init':
-				position = image.offsetLeft;
-				slider.scrollLeft = position;
-				break;
-			case 'scroll':
-				var end = Math.round(slider.scrollWidth-slider.offsetWidth);
-				var ignore = document.getElementsByClassName('ignoreScrollMarker');
-
-				if(slider.scrollLeft === 0 && ignore.length===0){
-					position = image.offsetLeft;
-				}else if(slider.scrollLeft === end && ignore.length===0){
-					var imageSize = image.clientWidth;
-					position = (image.offsetLeft)-(slider.offsetWidth-imageSize);
-				}
-				slider.scrollLeft = position;
-				break;
-		};
-
+		if(position !== undefined){
+			appScroll();
+		}else{
+			userScroll();
+		}
+	},
+	centeredPosition: function(x){
+		x.classList.add('selected');
+		x.classList.add('ignoreScroll');
+		var slider = document.getElementById('fences');
+		var windowMiddle = (slider.offsetWidth)/2;
+		var imageHalfWidth = (x.clientWidth)/2;
+		var position = (x.offsetLeft)-windowMiddle+imageHalfWidth;
+		return position;
 	},
 	clearSelection: function(){
-		var ignore = document.getElementsByClassName('ignoreScrollMarker');
-		var selectedImage = document.getElementsByClassName('selected');
-		if(ignore.length===0 && selectedImage.length!==0){
-			console.log('clearing');
-			selectedImage[0].classList.remove('selected');
+		if(!document.getElementsByClassName('ignoreScroll').length){
+			var selected = document.getElementsByClassName('selected');
+			if(selected.length){
+				selected[0].classList.remove('selected');
+			}
+		}else{
+			document.getElementsByClassName('ignoreScroll')[0].classList.remove('ignoreScroll');
 		}
 	},
 	windowResize: function(){
@@ -215,9 +230,16 @@ var controller = {
 	}
 }
 
-module.exports = controller	;
-controller.init();
-},{"./model":2,"./view":3}],2:[function(require,module,exports){
+//http://stackoverflow.com/questions/4666367/how-do-i-position-a-div-relative-to-the-mouse-pointer-using-jquery
+//for the hover effect with the mouse
+//16, doesn't work.
+//select styling: have to think about it
+//probably takes 2 min to preload everything have to check for something faster
+//changing sizes doesn't work
+
+module.exports = controller;
+// controller.init();
+},{"./model":2,"./view":4}],2:[function(require,module,exports){
 var model = {
 	countries: [
 		'canada',
@@ -234,15 +256,34 @@ var model = {
 
 module.exports = model;
 },{}],3:[function(require,module,exports){
+var start = new Date().getTime();
+var controller = require('./controller.js');
+
+function loadImage(x){
+	var picture = document.createElement('img');
+	picture.src = '/images/'+x+'.png';
+	console.log(x);
+	if(x===20){
+		var end = new Date().getTime();
+		console.log('finished', (end-start)/1000);
+		controller.init();
+	}
+}
+
+for(var x = 1; x<=20; x++){
+	loadImage(x);
+}
+},{"./controller.js":1}],4:[function(require,module,exports){
 var controller = require('./controller');
 
 var view = {
-	init: function(y){
+	init: function(){
 
-		controller.prepareInfiniteScroll(y);
+		controller.prepareInfiniteScroll();
 
 		document.getElementById('fences').addEventListener('scroll', function(){
-			controller.userScrolling();
+			controller.clearSelection();
+			controller.scrolling();
 		});
 
 		document.getElementsByTagName('input')[0].addEventListener('keydown', function(e){
@@ -272,4 +313,5 @@ var view = {
 }
 
 module.exports = view;
-},{"./controller":1}]},{},[1]);
+},{"./controller":1}]},{},[3])(3)
+});

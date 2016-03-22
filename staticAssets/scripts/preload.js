@@ -1,13 +1,16 @@
-var preload = {
-	init: function(){
+var start = new Date().getTime();
+var controller = require('./controller.js');
 
-		var loadImage = function(){
-			var picture = document.createElement('img');
-			picture.src = '/staticAssets/images/cursor1.png';
-		}
-
-		loadImage();
+function loadImage(x){
+	var picture = document.createElement('img');
+	picture.src = '/images/'+x+'.png';
+	console.log(x);
+	if(x===20){
+		var end = new Date().getTime();
+		console.log('finished', (end-start)/1000);
 	}
-};
+}
 
-preload.init();
+for(var x = 1; x<=20; x++){
+	loadImage(x);
+}

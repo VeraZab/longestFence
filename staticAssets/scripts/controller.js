@@ -1,5 +1,7 @@
 var model = require('./model');
 
+// Reflows and Repaints
+
 var controller = {
 	init: function(){
 		var view = require('./view');
@@ -181,7 +183,6 @@ var controller = {
 		var images = document.images;
 
 		function userScroll(){
-
 			if(slider.scrollLeft === 0){
 				var cloneClass = clones[0].classList[2];
 				var targetImage = document.getElementsByClassName(cloneClass)[1];
@@ -193,6 +194,7 @@ var controller = {
 				position = (targetImage.offsetLeft)-(slider.offsetWidth-imageSize);
 				slider.scrollLeft = position;
 			}
+			requestAnimationFrame(userScroll);
 		}
 
 		function appScroll(){
@@ -229,7 +231,4 @@ var controller = {
 	}
 }
 
-
-
 module.exports = controller;
-// controller.init();

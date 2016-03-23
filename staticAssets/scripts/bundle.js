@@ -1,5 +1,7 @@
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.controller = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var model = require('./model');
+// requestAnimationFrame
+// Reflows and Repaints
 
 var controller = {
 	init: function(){
@@ -182,7 +184,6 @@ var controller = {
 		var images = document.images;
 
 		function userScroll(){
-
 			if(slider.scrollLeft === 0){
 				var cloneClass = clones[0].classList[2];
 				var targetImage = document.getElementsByClassName(cloneClass)[1];
@@ -194,17 +195,20 @@ var controller = {
 				position = (targetImage.offsetLeft)-(slider.offsetWidth-imageSize);
 				slider.scrollLeft = position;
 			}
+			requestAnimationFrame(userScroll);
 		}
 
 		function appScroll(){
 			slider.scrollLeft = position;
 		}
 
+
 		if(position !== undefined){
 			appScroll();
 		}else{
 			userScroll();
 		}
+
 	},
 	centeredPosition: function(x){
 		x.classList.add('selected');
@@ -230,15 +234,7 @@ var controller = {
 	}
 }
 
-//http://stackoverflow.com/questions/4666367/how-do-i-position-a-div-relative-to-the-mouse-pointer-using-jquery
-//for the hover effect with the mouse
-//16, doesn't work.
-//select styling: have to think about it
-//probably takes 2 min to preload everything have to check for something faster
-//changing sizes doesn't work
-
 module.exports = controller;
-// controller.init();
 },{"./model":2,"./view":4}],2:[function(require,module,exports){
 var model = {
 	countries: [
@@ -251,29 +247,37 @@ var model = {
 		'https://www.google.ca/maps/search/google+maps/@45.4793767,-73.4695146,3a,75y,315.01h,87.11t/data=!3m7!1e1!3m5!1sgFyj-_XPD89XuwaDeCFhkg!2e0!6s%2F%2Fgeo0.ggpht.com%2Fcbk%3Fpanoid%3DgFyj-_XPD89XuwaDeCFhkg%26output%3Dthumbnail%26cb_client%3Dmaps_sv.tactile.gps%26thumb%3D2%26w%3D203%26h%3D100%26yaw%3D349.5%26pitch%3D-3!7i13312!8i6656',
 		'https://www.google.ca/maps/search/google+maps/@45.5664567,-73.5684767,3a,75y,239.6h,82.47t/data=!3m8!1e1!3m6!1s-p2jtABzslyA%2FUu2vNyo8LaI%2FAAAAAAAKULo%2FPHYUtqb-pCE!2e4!3e11!6s%2F%2Flh6.googleusercontent.com%2F-p2jtABzslyA%2FUu2vNyo8LaI%2FAAAAAAAKULo%2FPHYUtqb-pCE%2Fw203-h101-n-k-no%2F!7i10000!8i5000'
 	]
-
 }
 
 module.exports = model;
 },{}],3:[function(require,module,exports){
 var start = new Date().getTime();
-var controller = require('./controller.js');
+var controller = require('./controller');
+
+var loader = document.createElement('img');
+loader.setAttribute('id', 'loader');
+loader.src = 'images/loader.gif';
+document.getElementById('fences').appendChild(loader);
 
 function loadImage(x){
 	var picture = document.createElement('img');
 	picture.src = '/images/'+x+'.png';
 	console.log(x);
+
 	if(x===20){
-		var end = new Date().getTime();
-		console.log('finished', (end-start)/1000);
-		controller.init();
+		picture.onload = function(){
+			document.getElementById('fences').removeChild(loader);
+			var end = new Date().getTime();
+			console.log('finished', (end-start)/1000);
+			setTimeout(function(){controller.init();}, 3);
+		}
 	}
 }
 
 for(var x = 1; x<=20; x++){
 	loadImage(x);
 }
-},{"./controller.js":1}],4:[function(require,module,exports){
+},{"./controller":1}],4:[function(require,module,exports){
 var controller = require('./controller');
 
 var view = {

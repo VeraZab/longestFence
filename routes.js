@@ -7,7 +7,8 @@ fileExtensions = {
     '.css':'text/css',
     '.js':'text/javascript',
     '.jpg':'image/jpg',
-    '.ttf': 'font/opentype'
+    '.ttf': 'font/opentype',
+    '.gif': 'image/gif'
 };
 
 function determineType(ext){

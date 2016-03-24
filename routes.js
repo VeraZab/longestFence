@@ -6,7 +6,7 @@ fileExtensions = {
     '.html':'text/html',
     '.css':'text/css',
     '.js':'text/javascript',
-    '.jpg':'image/jpg',
+    '.jpeg':'image/jpg',
     '.ttf': 'font/opentype',
     '.gif': 'image/gif'
 };

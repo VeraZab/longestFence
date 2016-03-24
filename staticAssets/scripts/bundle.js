@@ -32,7 +32,7 @@ function start(){
 
 	function loadImage(x){
 		var picture = document.createElement('img');
-		picture.src = '/images/'+x+'.png';
+		picture.src = '/images/'+x+'.jpeg';
 		return picture;
 	};
 

@@ -57,10 +57,11 @@ input:focus {
 }
 
 .selected{
-	width: 25%;
-	margin-bottom: -2%;
-	margin-right: 3px;
-	margin-left: 3px;
+	margin-bottom: -0.5em;
+	margin-right: 0.5em;
+	margin-left: 0.5em;
+	margin-top: 0.5em;
+	box-shadow:0em 0em 1em rgba(247,239,247,0.95);
 }
 
 
@@ -75,6 +76,8 @@ input:focus {
 	white-space: nowrap;
 	overflow-x: auto;
 	overflow-y:hidden;
+	padding-bottom: 20px;
+	padding-top: 10px;
 }
 
 img{

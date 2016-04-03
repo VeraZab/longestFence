@@ -107,8 +107,6 @@ img{
 	width: 30px;
 }
 
-@media (max-width: 770px) {
-  #menu {
-    display: none;
-  }
-}
+#about:target{
+	height: 100%;
+};

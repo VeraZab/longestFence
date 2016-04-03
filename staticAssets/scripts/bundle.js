@@ -5,6 +5,7 @@
 	var windowMiddle = (slider.offsetWidth)/2;
 	var end, originals, imageSize, numImagesPerPage, clones, images, selected,
 	imageWidth, imageHeight;
+	var about = document.getElementById('about');
 
 	function preload(){
 		var start = new Date().getTime();
@@ -34,6 +35,19 @@
 		var picture = document.createElement('img');
 		picture.src = '/images/'+x+'.jpg';
 		return picture;
+	};
+
+	var count = 0;
+	function aboutClick(){
+		about.addEventListener('click', function(){
+			if(count%2){
+				count++;
+				about.style.height = '5%';
+			}else{
+				count++;
+				about.style.height = '100%';
+			}
+		});
 	};
 
 	function sliderStart(){
@@ -188,7 +202,7 @@
 		 	var selectedCountry = document.getElementsByClassName(search)[0];
 		 	focussing(selectedCountry);
 		};
-		//else fuzzy search
+
 	};
 
 	function focussing(x){
@@ -214,15 +228,23 @@
 			var index = Array.prototype.indexOf.call(originals, originalImage);
 
 			if(clonesCenteringAdjustmentNeeded(x)){
+
 				image = document.getElementsByClassName(imageClass)[1];
+
 			}else{
+
 				image = x;
 			}
 		}else{
+
 			image = x;
 			var index = Array.prototype.indexOf.call(originals, image);
 		}
-
+		image.style.width = imageWidth*1.1+'px';
+		image.style.height = imageHeight*1.1+'px';
+		image.classList.add('selected');
+		image.classList.add('ignoreScroll');
+		selected = document.getElementsByClassName('selected');
 		position = centeredPosition(image);
 		scrolling(position);
 	};
@@ -255,13 +277,9 @@
 	};
 
 	function centeredPosition(x){
-		x.classList.add('selected');
-		x.classList.add('ignoreScroll');
-		selected = document.getElementsByClassName('selected');
-		x.style.width = imageWidth*1.1+'px';
-		x.style.height = imageHeight*1.1+'px';
-		var imageHalfWidth = (imageWidth*1.1)/2;
-		var position = (x.offsetLeft)-windowMiddle+imageHalfWidth;
+		console.log(x, selected);
+		var position = (x.offsetLeft)-windowMiddle+selected[0].clientWidth/2;
+		console.log(position);
 		return position;
 	};
 
@@ -309,6 +327,7 @@
 		]
 	};
 
+	aboutClick();
 	preload();
 
 })();

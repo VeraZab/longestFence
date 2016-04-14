@@ -1,12 +1,11 @@
-@font-face { font-family: ProductSansR; src: url('/stylesheets/ProductSansReg.ttf'); }
+@font-face { font-family: 'ProductSansR'; src: url('/stylesheets/ProductSansReg.ttf'); }
 
 body, html{
 	width: 100%;
 	height: 100%;
 	margin: 0 0 0 0;
-	font-size: 16px;
-	background-color: #B2B2B2;
-	color: white;
+	font-size: 25px;
+	color: black;
 	font-family: 'ProductSansR';
 }
 
@@ -26,31 +25,32 @@ body, html{
 }
 
 #title {
-	font-size: 1.8em;
-	margin: 0 0.5em;
+	font-size: 1.2em;
+	position: fixed;
+	top: 5em;
+	left: calc(50% - 6.2em);
 }
 
-button{
-	font-size: 1em;
-	margin: 0 0.1em;
-	background-color: white;
-	width: 1.5em;
-	height: 1.5em;
-	text-decoration: none;
-	border-style: none;
-	color: #B2B2B2;
-	font-weight: bold;
+
+#add, #substract {
 	text-align: center;
 }
-button:focus {
-	outline:0;
+
+#marker{
+	width: 4em;
+	height:1em;
+	position: fixed;
+	bottom: 6.2em;
+	left: calc(50% - 2em);
 }
 
-input{
+
+input[type="text"]{
 	font-size: 1em;
 	line-height: 1.5em;
 	width: 20%;
 	margin: 0 0.5em;
+	border: 1px solid black;
 }
 input:focus {
 	outline: 0;
@@ -67,10 +67,10 @@ input:focus {
 
 #container{
 	height: 100%;
-	background-color: #B2B2B2;
 	display: flex;
 	align-items: center;
 }
+
 #fences{
 	width: 100%;
 	white-space: nowrap;
@@ -80,36 +80,29 @@ input:focus {
 	padding-top: 10px;
 }
 
-img{
+img:not(#marker):not(#loader){
 	width: 20%;
 	display: inline-block;
 	box-sizing: border-box;
-	/*cursor:  url(/images/cursor1.png)60 0, auto;
-	*/
+	cursor: url(/images/cursor.png)60 0, auto;
 	-webkit-transform: translateZ(0);
 	-webkit-transform: translate3d(0,0,0);
 }
 
 #about{
-	background-color: #FF1919;
 	width: 100%;
 	height: 5%;
 	text-align: center;
-	font-size: 1.3em;
+	font-size: 1em;
 	position: fixed;
 	left:0;
 	bottom: 0;
+	border: 1px solid black;
+	background-color: white;
 }
 
 #loader{
-	margin-left: 50%;
-	height: 30px;
-	width: 30px;
+	margin-left: calc(50% - 0.6em);
+	height: 1.2em;
+	width: 1.2em;
 }
-
-/*
-p{
-	text-align: center;
-	width: 70%;
-	margin: 0 auto;
-}*/

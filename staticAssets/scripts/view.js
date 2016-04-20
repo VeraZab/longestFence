@@ -7,7 +7,6 @@
 	var about = document.getElementById('about');
 
 	function preload(){
-		var start = new Date().getTime();
 		var loader = document.createElement('img');
 		loader.setAttribute('id', 'loader');
 		loader.src = 'images/loader.gif';
@@ -19,7 +18,6 @@
 			if(x===195){
 				picture.onload = function(){
 					fences.removeChild(loader);
-					var end = new Date().getTime();
 					setTimeout(function(){sliderStart()}, 2);
 				};
 			}
@@ -66,7 +64,7 @@
 			changeImageSize('add');
 		});
 
-		document.getElementById('substract').addEventListener('click', function(){
+		document.getElementById('sub').addEventListener('click', function(){
 			changeImageSize('substract');
 		});
 
@@ -74,11 +72,17 @@
 			windowResize();
 		});
 
-		for(var x = 0; x<document.images.length; x++){
-			document.images[x].addEventListener('click', function(){
-				focussing(this);
-			});
-		};
+		slider.addEventListener('click', function(e){
+			if(e.target && e.target.nodeName == "IMG") {
+				focussing(e.target);
+			};
+		});
+
+		// slider.addEventListener('mouseenter', function(e){
+		// 	if(e.target && e.target.nodeName == "IMG"){
+
+		// 	}
+		// });		
 	};
 
 	function prepareInfiniteScroll(){
@@ -141,19 +145,19 @@
 		};
 
 		images = document.images;
-		if(images[0].classList.contains('selected')){
-			imageHeight = images[1].clientHeight;
-			imageWidth = images[1].clientWidth;
+		if(images[2].classList.contains('selected')){
+			imageHeight = images[3].clientHeight;
+			imageWidth = images[3].clientWidth;
 		}else{
-			imageHeight = images[0].clientHeight;
-			imageWidth = images[0].clientWidth;
+			imageHeight = images[2].clientHeight;
+			imageWidth = images[2].clientWidth;
 		}
 		end = Math.round(slider.scrollWidth-slider.offsetWidth);
 	};
 
 	function changeImageSize(change){
-		var largest = document.getElementById('container').clientHeight*0.6;
-		var smallest = document.getElementById('container').clientHeight*0.1;
+		var largest = 330;
+		var smallest = 100;
 		var ratio, targetHeight, targetWidth;
 		var selectedImage = [];
 
@@ -177,11 +181,13 @@
 		targetWidth = imageWidth*ratio;
 
 		for(var x=0; x<images.length; x++){
-			images[x].style.width = targetWidth+'px';
-			images[x].style.height = targetHeight+'px';
-			if(images[x].classList.contains('selected')){
-				selectedImage.push(images[x]);
-			};
+			if(images[x].id !== 'marker' && images[x].id !== 'add' && images[x].id !== 'sub'){
+				images[x].style.width = targetWidth+'px';
+				images[x].style.height = targetHeight+'px';
+				if(images[x].classList.contains('selected')){
+					selectedImage.push(images[x]);
+				};
+			}
 		};
 
 		appendClones(selectedImage[0]);
@@ -298,8 +304,6 @@
 	function windowResize(){
 		appendClones();
 	};
-
-
 
 	aboutClick();
 	preload();

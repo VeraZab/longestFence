@@ -47,9 +47,10 @@ body, html{
 
 
 input[type="text"]{
+	-webkit-appearance: none;
 	font-size: 1em;
 	line-height: 1.5em;
-	height: 20px;
+	height: 24px;
 	width: 50px;
 	margin: 0 0.5em;
 	border: 1px solid black;
@@ -94,9 +95,12 @@ img:not(#marker):not(#loader):not(#add):not(#sub){
 #add{
 	height: 20px;
 	width: 20px;
+	padding-top: 2px;
+	margin: 10px;
 }
 
 #sub{
+	padding-top: 2px;
 	width: 20px;
 	padding-bottom: 7px;
 }

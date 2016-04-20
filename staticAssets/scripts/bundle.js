@@ -481,11 +481,7 @@ module.exports = data;
 			};
 		});
 
-		// slider.addEventListener('mouseenter', function(e){
-		// 	if(e.target && e.target.nodeName == "IMG"){
-
-		// 	}
-		// });		
+				
 	};
 
 	function prepareInfiniteScroll(){
@@ -497,6 +493,22 @@ module.exports = data;
 			var a = document.createElement('a');
 			a.addEventListener('click', function(){
 				window.open(data.sources[x-1], '_blank');
+			});
+			a.addEventListener('mouseover', function(e){
+				var div = document.createElement('div');
+				div.setAttribute('id', 'display');
+				div.textContent = e.target.classList.item(1);
+				var marginLeft = e.clientX;
+				var marginTop = e.clientY;
+				console.log(marginTop, marginLeft);
+				div.style.marginTop = marginTop;
+				div.style.marginLeft = marginLeft;
+				div.style.zIndex = '100';
+				document.body.appendChild(div);
+			});
+			a.addEventListener('mouseout', function(){
+				var el = document.getElementById('display');
+				el.parentNode.removeChild(el);
 			});
 			a.appendChild(picture);
 			slider.appendChild(a);

@@ -98,7 +98,7 @@ img:not(#marker):not(#loader):not(#add):not(#sub){
 
 #sub{
 	width: 20px;
-	padding-bottom: 5px;
+	padding-bottom: 7px;
 }
 
 #about{

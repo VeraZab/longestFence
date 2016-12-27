@@ -5,7 +5,7 @@ var data = {
 			['iran','tehran'],
 			['iraq','baghdad'],
 			['ireland','dublin'],
-			['mexico', 'mexico city'],
+			['mexico', 'mexico_city'],
 			['italy', 'rome'],
 			['south_sudan', 'juba'],
 			['mongolia', 'ulaanbaatar'],
@@ -26,7 +26,7 @@ var data = {
 			['cuba', 'havana'],
 			['hungary', 'budapest'],
 			['brazil', 'brasilia'],
-			['u.s.a', 'washington'],
+			['u_s_a', 'washington'],
 			['japan', 'tokyo'],
 			['luxembourg', 'luxembourg'],
 			['slovenia', 'ljubljana'],
@@ -229,7 +229,7 @@ var data = {
 			'https://www.google.ca/maps/@46.0919245,14.5126915,3a,45y,118.63h,64.45t/data=!3m6!1e1!3m4!1s WYdQk8liZdkOrDyeUHYVXQ!2e0!7i13312!8i6656!6m1!1e1',
 			'https://www.google.ca/maps/@27.480023,89.6391072,3a,90y,104.46h,50.15t/data=!3m6!1e1!3m4!1sn IwtBripEY-t9He5f0NkJw!2e0!7i13312!8i6656!6m1!1e1',
 			'https://www.google.ca/maps/place/Islamabad,+Pakistan/@33.7601919,73.0664928,3a,37.5y,170h,80. 91t/data=!3m8!1e1!3m6!1s- Ny7YdjoCiIY%2FVfp1wneNGUI%2FAAAAAAAAnNY%2FsJFxToU0VkY!2e4!3e11!6s%2F%2Flh5.googl eusercontent.com%2F- Ny7YdjoCiIY%2FVfp1wneNGUI%2FAAAAAAAAnNY%2FsJFxToU0VkY%2Fw203-h101-n-k- no%2F!7i6656!8i3328!4m2!3m1!1s0x38dfbfd07891722f:0x6059515c3bdb02b6!6m1!1e1',
-			'https://www.google.ca/maps/@41.32865,19.829555,3a,60y,333.14h,86.95t/data=!3m8!1e1!3m6!1s- GOQNrs2AVwk%2FVN4FeKTIfEI%2FAAAAAAAAKP0%2FQxKJw3ceR90!2e4!3e11!6s%2F%2Flh4.goo gleusercontent.com%2F- GOQNrs2AVwk%2FVN4FeKTIfEI%2FAAAAAAAAKP0%2FQxKJw3ceR90%2Fw203-h101-n-k- no%2F!7i9728!8i4864!6m1!1e1', 
+			'https://www.google.ca/maps/@41.32865,19.829555,3a,60y,333.14h,86.95t/data=!3m8!1e1!3m6!1s- GOQNrs2AVwk%2FVN4FeKTIfEI%2FAAAAAAAAKP0%2FQxKJw3ceR90!2e4!3e11!6s%2F%2Flh4.goo gleusercontent.com%2F- GOQNrs2AVwk%2FVN4FeKTIfEI%2FAAAAAAAAKP0%2FQxKJw3ceR90%2Fw203-h101-n-k- no%2F!7i9728!8i4864!6m1!1e1',
 			'https://www.google.ca/maps/@3.1878356,101.6991053,3a,90y,225.27h,97.19t/data=!3m6!1e1!3m4!1s aIpfvgVsUGEg_GiV9Wl1fw!2e0!7i13312!8i6656!6m1!1e1',
 			'https://www.google.ca/maps/place/Luanda,+Angola/@-8.8183851,13.2712095,3a,90y,359.9h,82.8t/da ta=!3m8!1e1!3m6!1s- q9KC_oUvqEU%2FVcEqTbcNPFI%2FAAAAAAAAaVw%2FhMYNrwIVTcE!2e4!3e11!6s%2F%2Flh5.goo gleusercontent.com%2F- q9KC_oUvqEU%2FVcEqTbcNPFI%2FAAAAAAAAaVw%2FhMYNrwIVTcE%2Fw203-h101-n-k- no%2F!7i10240!8i5120!4m2!3m1!1s0x1a51f15cdc8d2c7d:0x850c1c5c5ecc5a92!6m1!1e1',
 			'https://www.google.ca/maps/place/Nassau,+The+Bahamas/@25.0773048,-77.4117508,3a,90y,182.28 h,116.43t/data=!3m8!1e1!3m6!1s- VglhBJsOFBI%2FVICXWQgC4aI%2FAAAAAAAAAMM%2FcL4XKkPm91U!2e4!3e11!6s%2F%2Flh6.go ogleusercontent.com%2F- VglhBJsOFBI%2FVICXWQgC4aI%2FAAAAAAAAAMM%2FcL4XKkPm91U%2Fw203-h101-n-k- no%2F!7i3584!8i1792!4m2!3m1!1s0x892f7c99b981dbc9:0x2aef01d3485e50d2!6m1!1e1',
@@ -244,10 +244,10 @@ var data = {
 			'https://www.google.ca/maps/@41.6873489,44.8032639,3a,90y,86.51h,62.59t/data=!3m8!1e1!3m6!1s- N5dMzOnjkEs%2FU_u- IpVTWdI%2FAAAAAAAAAqc%2F67bXpgARHZ8!2e4!3e11!6s%2F%2Flh4.googleusercontent.com%2F -N5dMzOnjkEs%2FU_u-IpVTWdI%2FAAAAAAAAAqc%2F67bXpgARHZ8%2Fw203-h101-n-k- no%2F!7i6656!8i3328!6m1!1e1',
 			'https://www.google.ca/maps/place/Chisinau,+Moldova/@47.0021769,28.8482689,3a,90y,256.85h,75.47t/data=!3m8!1e1!3m6!1s-OQmrQn7x_E8%2FVbNUxJ-170I%2FAAAAAAABGJc%2FJstx8KqxMXs!2e4!3e11!6s%2F%2Flh5.googleusercontent.com%2F-OQmrQn7x_E8%2FVbNUxJ-170I%2FAAAAAAABGJc%2FJstx8KqxMXs%2Fw203-h101-n-k-no%2F!7i5656!8i2828!4m2!3m1!1s0x40c97c3628b769a1:0x37d1d6305749dd3c!6m1!1e1',
 			'https://www.google.ca/maps/@54.6935215,25.2737809,3a,90y,309.37h,70.72t/data=!3m6!1e1!3m4!1s 89QjjkuZKYmEWGCS8e6g5g!2e0!7i13312!8i6656!6m1!1e1',
-			'https://www.google.ca/maps/@45.7697334,16.071068,3a,60y,217.15h,73.71t/data=!3m7!1e1!3m5!1sN HyCfPFXSlj_qBB2E8wUSQ!2e0!6s%2F%2Fgeo2.ggpht.com%2Fcbk%3Fpanoid%3DNHyCfPFXSlj_qB B2E8wUSQ%26output%3Dthumbnail%26cb_client%3Dmaps_sv.tactile.gps%26thumb%3D2%26w% 3D203%26h%3D100%26yaw%3D289.44641%26pitch%3D0!7i13312!8i6656!6m1!1e1', 
+			'https://www.google.ca/maps/@45.7697334,16.071068,3a,60y,217.15h,73.71t/data=!3m7!1e1!3m5!1sN HyCfPFXSlj_qBB2E8wUSQ!2e0!6s%2F%2Fgeo2.ggpht.com%2Fcbk%3Fpanoid%3DNHyCfPFXSlj_qB B2E8wUSQ%26output%3Dthumbnail%26cb_client%3Dmaps_sv.tactile.gps%26thumb%3D2%26w% 3D203%26h%3D100%26yaw%3D289.44641%26pitch%3D0!7i13312!8i6656!6m1!1e1',
 			'https://www.google.ca/maps/place/Panama+City,+Panama/@8.967158,-79.531317,3a,75y,2h,90t/data =!3m8!1e2!3m6!1s97715692!2e1!3e10!6s%2F%2Flh3.googleusercontent.com%2Fproxy%2FANY3MQ EJ8kc6z-MkCF4RuqCOi9RvyTS4_U3b8l2PPAVqMXVBFiWulMALMIArNBZMvU2rUsj- qkreB9u8ZK9iTpTfPa5-rQ%3Dw203- h152!7i4000!8i3000!4m2!3m1!1s0x8faca8f1dbe80363:0xaba25df1f042c10e!6m1!1e1',
 			'https://www.google.ca/maps/place/Kuwait+City,+Kuwait/@29.374482,47.964777,3a,75y,142h,90t/data=!3m8!1e2!3m6!1s70285157!2e1!3e10!6s%2F%2Flh5.googleusercontent.com%2Fproxy%2FdJvMXGsyKZHLxlZU7IAbGRWR5N1HDjY6W9pEGDEMci7dTo7RC71uEazbOOw-shpensB7t_pX6EDYvcJPuw-u-K2J262lnQ%3Dw203-h152!7i2048!8i1536!4m2!3m1!1s0x3fcf9c83ce455983:0xc3ebaef5af09b90e!6m1!1e1',
-			'https://www.google.ca/maps/place/Castries+City,+St+Lucia/@14.00841,-60.992263,3a,75y,33h,90t/data=!3m8!1e2!3m6!1s-vimjUNfEHC4%2FVHZYjxwzLlI%2FAAAAAAAAmJ0%2FhtMHPEbblZ4!2e4!3e12!6s%2F%2Flh5.googleusercontent.com%2F-vimjUNfEHC4%2FVHZYjxwzLlI%2FAAAAAAAAmJ0%2FhtMHPEbblZ4%2Fs203-k-no%2F!7i1600!8i1200!4m2!3m1!1s0x8c4067a838a6d44f:0x3afffd5e87c58b99!6m1!1e1', 
+			'https://www.google.ca/maps/place/Castries+City,+St+Lucia/@14.00841,-60.992263,3a,75y,33h,90t/data=!3m8!1e2!3m6!1s-vimjUNfEHC4%2FVHZYjxwzLlI%2FAAAAAAAAmJ0%2FhtMHPEbblZ4!2e4!3e12!6s%2F%2Flh5.googleusercontent.com%2F-vimjUNfEHC4%2FVHZYjxwzLlI%2FAAAAAAAAmJ0%2FhtMHPEbblZ4%2Fs203-k-no%2F!7i1600!8i1200!4m2!3m1!1s0x8c4067a838a6d44f:0x3afffd5e87c58b99!6m1!1e1',
 			'https://www.google.ca/maps/place/Bandar+Seri+Begawan,+Brunei/@4.894355,114.9414989,3a,45y,3 46.13h,98.52t/data=!3m8!1e1!3m6!1s- pM8YgdlGQMI%2FVU8JSHFQfrI%2FAAAAAAAACTY%2FDwM7EbCv_WQ!2e4!3e11!6s%2F%2Flh4.g oogleusercontent.com%2F- pM8YgdlGQMI%2FVU8JSHFQfrI%2FAAAAAAAACTY%2FDwM7EbCv_WQ%2Fw203-h101-n-k- no%2F!7i4000!8i2000!4m2!3m1!1s0x3222f5b0540b731f:0xeeacf8c47cbae84b!6m1!1e1',
 			'https://www.google.ca/maps/place/Cairo,+Cairo+Governorate,+Egypt/@30.0626428,31.24569,3a,30y, 241.8h,90.41t/data=!3m8!1e1!3m6!1s- ZBOxCZNBVmg%2FUOgDpST5j3I%2FAAAAAAAAHmg%2FdxTgTQ6A7Es!2e4!3e11!6s%2F%2Flh6.g oogleusercontent.com%2F- ZBOxCZNBVmg%2FUOgDpST5j3I%2FAAAAAAAAHmg%2FdxTgTQ6A7Es%2Fw277-h100-n-k- no%2F!7i4454!8i1606!4m2!3m1!1s0x14583fa60b21beeb:0x79dfb296e8423bba!6m1!1e1',
 			'https://www.google.ca/maps/place/Lome,+Togo/@6.1887017,1.1607913,3a,37.5y,134.41h,72.42t/data=!3m8!1e1!3m6!1s-8aY7BocHt6s%2FVoFh6ZREYtI%2FAAAAAAAAAFI%2FQvta3hp9H3o!2e4!3e11!6s%2F%2Flh4.googleusercontent.com%2F-8aY7BocHt6s%2FVoFh6ZREYtI%2FAAAAAAAAAFI%2FQvta3hp9H3o%2Fw203-h101-n-k-no%2F!7i10240!8i5120!4m2!3m1!1s0x1023e1c113185419:0x3224b5422caf411d!6m1!1e1',
@@ -310,8 +310,8 @@ var data = {
 			'https://www.google.ca/maps/@45.3271983,-75.6565743,3a,37.5y,300.71h,82.69t/data=!3m6!1e1!3m4 !1sCWl6VHIPo-mgNbVA4VEHxQ!2e0!7i13312!8i6656!6m1!1e1',
 			'https://www.google.ca/maps/@42.499929,1.5120457,3a,90y,120.54h,79.44t/data=!3m6!1e1!3m4!1sDl UDx1HT7o9_Olc7ldeWow!2e0!7i13312!8i6656!6m1!1e1',
 			'https://www.google.ca/maps/@64.1493819,-21.9672337,3a,37.5y,152.85h,75.55t/data=!3m6!1e1!3m4!1s6XLiQL8tRdsvIc9kbzQCQQ!2e0!7i13312!8i6656!6m1!1e1',
-			'https://www.google.ca/maps/@25.0252157,121.5597752,3a,90y,18.78h,74.35t/data=!3m6!1e1!3m4!1s 5PsFp5y6VjK5kkfI0c66bw!2e0!7i13312!8i6656!6m1!1e1', 
-			'https://www.google.ca/maps/@46.9484645,7.4585344,3a,90y,355.13h,70.97t/data=!3m6!1e1!3m4!1sr uX1ZyHHUvXozeNLyQSZDQ!2e0!7i13312!8i6656!6m1!1e1', 
+			'https://www.google.ca/maps/@25.0252157,121.5597752,3a,90y,18.78h,74.35t/data=!3m6!1e1!3m4!1s 5PsFp5y6VjK5kkfI0c66bw!2e0!7i13312!8i6656!6m1!1e1',
+			'https://www.google.ca/maps/@46.9484645,7.4585344,3a,90y,355.13h,70.97t/data=!3m6!1e1!3m4!1sr uX1ZyHHUvXozeNLyQSZDQ!2e0!7i13312!8i6656!6m1!1e1',
 			'https://www.google.ca/maps/@60.1624699,24.9554656,3a,90y,55.18h,65.65t/data=!3m6!1e1!3m4!1sH cwXyf2yIxw65ckSFBnvVg!2e0!7i13312!8i6656!6m1!1e1',
 			'https://www.google.ca/maps/@51.5002353,-0.1260929,3a,90y,95.31h,60.8t/data=!3m6!1e1!3m4!1sPR 03qao-Uww3I1n0SnWTcw!2e0!7i13312!8i6656!6m1!1e1',
 			'https://www.google.ca/maps/@35.1608467,33.342514,3a,90y,263.74h,58.19t/data=!3m8!1e1!3m6!1s- QYY0kMwn4gQ%2FVDaLUJfBvlI%2FAAAAAAAAARE%2FKLVvRkMRg- Y!2e4!3e11!6s%2F%2Flh4.googleusercontent.com%2F- QYY0kMwn4gQ%2FVDaLUJfBvlI%2FAAAAAAAAARE%2FKLVvRkMRg-Y%2Fw203-h101-n-k- no%2F!7i8704!8i4352!6m1!1e1',
@@ -396,334 +396,118 @@ var data = {
 		]
 	};
 
-
-
-//look at appostrophies, and -
 module.exports = data;
+
 },{}],2:[function(require,module,exports){
-(function (){
+(function() {
 	var data = require('./data');
-	var slider = document.getElementById('fences');
-	var windowMiddle = (slider.offsetWidth)/2;
-	var end, originals, imageSize, numImagesPerPage, clones, images, selected,
-	imageWidth, imageHeight;
-	var about = document.getElementById('about');
+	var countries = data.countries;
+	var slider = document.getElementById('container');
+	var description = document.getElementById('description');
+	var descriptions = document.getElementsByTagName('span');
+	var fences = document.getElementById('fences');
+	var span1 = document.getElementById('firstImg');
+	var span2 = document.getElementById('secondImg');
+	var span3 = document.getElementById('thirdImg');
+	var span4 = document.getElementById('fourthImg');
+	var span5 = document.getElementById('fifthImg');
+	var span6 = document.getElementById('sixthImg');
+	var span7 = document.getElementById('seventhImg');
+	var spans = [].slice.call(document.getElementsByTagName('span'));
+
+	var imageWidth,
+		sliderStartForward,
+		sliderEndForward,
+		sliderStartBackward;
 
 	function preload(){
-		var loader = document.createElement('img');
-		loader.setAttribute('id', 'loader');
-		loader.src = 'images/loader.gif';
-		fences.appendChild(loader);
+		for (var x = 1; x <= 195; x++) {
+			var picture = document.createElement('img');
+			picture.src = '/images/' + x + '.jpg';
+			picture.style.display = 'none';
+			var a = document.createElement('a');
+			a.href = data.sources[x-1];
+			a.target = '_blank';
 
-		function preloadImage(x){
-			var picture = loadImage(x);
-
-			if(x===195){
-				picture.onload = function(){
-					fences.removeChild(loader);
-					setTimeout(function(){sliderStart()}, 2);
-				};
-			}
+			a.appendChild(picture);
+			fences.appendChild(a);
 		};
 
-		for(var x = 1; x<=195; x++){
-			preloadImage(x);
+		var clone194 = document.getElementsByTagName('a')[194].cloneNode(true);
+		var clone193 = document.getElementsByTagName('a')[193].cloneNode(true);
+		var clone192 = document.getElementsByTagName('a')[192].cloneNode(true);
+		var clone191 = document.getElementsByTagName('a')[191].cloneNode(true);
+		var clone0 = document.getElementsByTagName('a')[0].cloneNode(true);
+		var clone1 = document.getElementsByTagName('a')[1].cloneNode(true);
+		var clone2 = document.getElementsByTagName('a')[2].cloneNode(true);
+		var clone3 = document.getElementsByTagName('a')[3].cloneNode(true);
+		countries = [['serbia', 'belgrade'], ['palau', 'ngerulmud'], ['jordan', 'amman'], ['vanuatu', 'portvila']].concat(countries);
+		countries = countries.concat([['indonesia', 'jakarta'], ['iran','tehran'], ['iraq','baghdad'], ['ireland','dublin'], ['mexico', 'mexico_city'], ['italy', 'rome'], ['south_sudan', 'juba']]);
+
+		fences.insertBefore(clone194, document.getElementsByTagName('a')[0]);
+		fences.insertBefore(clone193, document.getElementsByTagName('a')[0]);
+		fences.insertBefore(clone192, document.getElementsByTagName('a')[0]);
+		fences.insertBefore(clone191, document.getElementsByTagName('a')[0]);
+		fences.appendChild(clone0);
+		fences.appendChild(clone1);
+		fences.appendChild(clone2);
+		fences.appendChild(clone3);
+
+		document.images[3].onload = function() {
+			[].slice.call(document.images).forEach(function(image) {
+				image.style.display = 'inline-block';
+			});
+			imageWidth = document.images[3].getBoundingClientRect().width;
+			sliderStartForward = document.images[3].getBoundingClientRect().right;
+			sliderEndForward = document.images[199].getBoundingClientRect().left;
+			sliderStartBackward = document.images[195].getBoundingClientRect().left;
+			sliderStart();
 		};
-	};
-
-	function loadImage(x){
-		var picture = document.createElement('img');
-		picture.src = '/images/'+x+'.jpg';
-		return picture;
-	};
-
-	var count = 0;
-	function aboutClick(){
-		about.addEventListener('click', function(){
-			if(count%2){
-				count++;
-				about.style.height = '5%';
-			}else{
-				count++;
-				about.style.height = '100%';
-			}
-		});
 	};
 
 	function sliderStart(){
-		prepareInfiniteScroll();
+		fences.scrollLeft = sliderStartForward;
 
-		slider.addEventListener('scroll', function(){
-			clearSelection();
-			scrolling();
-		});
+		fences.addEventListener('scroll', scrolling);
+		fences.addEventListener('mouseover', highlight);
+		fences.addEventListener('mouseout', unHighlight);
 
-		document.getElementsByTagName('input')[0].addEventListener('keydown', function(e){
-			findSearchedCountry(e, this.value);
-		}, false);
+		function scrolling() {
+			var firstIndex = Math.floor(fences.scrollLeft / imageWidth);
+			span1.textContent = countries[firstIndex][0].split('_').join(' ').toUpperCase();
+			span2.textContent = countries[firstIndex+1][0].split('_').join(' ').toUpperCase();
+			span3.textContent = countries[firstIndex+2][0].split('_').join(' ').toUpperCase();
+			span4.textContent = countries[firstIndex+3][0].split('_').join(' ').toUpperCase();
+			span5.textContent = countries[firstIndex+4][0].split('_').join(' ').toUpperCase();
+			span6.textContent = countries[firstIndex+5][0].split('_').join(' ').toUpperCase();
+			span7.textContent = countries[firstIndex+6][0].split('_').join(' ').toUpperCase();
 
-
-		document.getElementById('add').addEventListener('click', function(){
-			changeImageSize('add');
-		});
-
-		document.getElementById('sub').addEventListener('click', function(){
-			changeImageSize('substract');
-		});
-
-		window.addEventListener('resize', function(){
-			windowResize();
-		});
-
-		slider.addEventListener('click', function(e){
-			if(e.target && e.target.nodeName == "IMG") {
-				focussing(e.target);
-			};
-		});
-
-				
-	};
-
-	function prepareInfiniteScroll(){
-		function createImage(x){
-			var picture = loadImage(x);
-			picture.classList.add('original');
-			var uniqueClass = data.countries[x-1][0];
-			picture.classList.add(uniqueClass);
-			var a = document.createElement('a');
-			a.addEventListener('click', function(){
-				window.open(data.sources[x-1], '_blank');
-			});
-			a.addEventListener('mouseover', function(e){
-				var div = document.createElement('div');
-				div.setAttribute('id', 'display');
-				div.textContent = e.target.classList.item(1);
-				var marginLeft = e.clientX;
-				var marginTop = e.clientY;
-				console.log(marginTop, marginLeft);
-				div.style.marginTop = marginTop;
-				div.style.marginLeft = marginLeft;
-				div.style.zIndex = '100';
-				document.body.appendChild(div);
-			});
-			a.addEventListener('mouseout', function(){
-				var el = document.getElementById('display');
-				el.parentNode.removeChild(el);
-			});
-			a.appendChild(picture);
-			slider.appendChild(a);
-		};
-
-		for(var x = 1; x<=195; x++){
-			createImage(x);
-		};
-
-		originals = document.getElementsByClassName('original');
-		imageWidth = document.images[0].clientWidth;
-		numImagesPerPage = Math.round(slider.offsetWidth/imageWidth)+1;
-		clones = document.getElementsByClassName('clone');
-
-		appendClones();
-
-		var position = originals[0].offsetLeft;
-		scrolling(position);
-	};
-
-	function appendClones(selectedImage){
-		var lastOriginalImageIndex = originals.length-1;
-		var lastCloneIndex = lastOriginalImageIndex-numImagesPerPage;
-
-		function createClone(x){
-			var imageClass = originals[x].classList[1];
-			var clone = originals[x].cloneNode(true);
-			clone.removeAttribute('class');
-			clone.setAttribute('class', 'clone '+imageClass);
-			var a = document.createElement('a');
-			a.addEventListener('click', function(){
-				window.open(data.sources[x], '_blank');
-			});
-			a.appendChild(clone);
-
-			if(selectedImage!==undefined&&selectedImage.classList.contains('clone')){
-				clone.classList.add('selected');
+			if (sliderStartBackward && fences.scrollLeft < 1) {
+				fences.scrollLeft = sliderStartBackward;
 			}
 
-			return a;
-		};
-
-		while (clones.length !== 0) {
-			clones[0].parentNode.removeChild(clones[0]);
-		};
-
-		for(var x = lastOriginalImageIndex; x>lastCloneIndex; x--){
-			slider.insertBefore(createClone(x), slider.childNodes[0]);
-		};
-
-		images = document.images;
-		if(images[2].classList.contains('selected')){
-			imageHeight = images[3].clientHeight;
-			imageWidth = images[3].clientWidth;
-		}else{
-			imageHeight = images[2].clientHeight;
-			imageWidth = images[2].clientWidth;
-		}
-		end = Math.round(slider.scrollWidth-slider.offsetWidth);
-	};
-
-	function changeImageSize(change){
-		var largest = 330;
-		var smallest = 100;
-		var ratio, targetHeight, targetWidth;
-		var selectedImage = [];
-
-		if(change==='add'){
-			ratio = 1.5;
-			targetHeight = imageHeight*ratio;
-			if (targetHeight>largest){
-				targetHeight=largest;
-				ratio = targetHeight/imageHeight;
-			}
-
-		}else if(change==='substract'){
-			ratio = 0.75;
-			targetHeight = imageHeight*ratio;
-			if(targetHeight<smallest){
-				targetHeight=smallest;
-				ratio = targetHeight/imageHeight;
+			if (sliderEndForward && fences.scrollLeft > sliderEndForward - 15) {
+				fences.scrollLeft = sliderStartForward;
 			}
 		};
 
-		targetWidth = imageWidth*ratio;
-
-		for(var x=0; x<images.length; x++){
-			if(images[x].id !== 'marker' && images[x].id !== 'add' && images[x].id !== 'sub'){
-				images[x].style.width = targetWidth+'px';
-				images[x].style.height = targetHeight+'px';
-				if(images[x].classList.contains('selected')){
-					selectedImage.push(images[x]);
-				};
-			}
+		function highlight(e) {
+			var countryToHighlight = countries[Math.floor((fences.scrollLeft + e.clientX)/ imageWidth)][0].split('_').join(' ').toUpperCase();
+			spans.forEach(function(span) {
+				if(span.textContent === countryToHighlight) {
+					span.style.color = 'white';
+				}
+			})
 		};
 
-		appendClones(selectedImage[0]);
-
-		if(document.getElementsByClassName('selected').length){
-			position = centeredPosition(document.getElementsByClassName('selected')[0]);
-			scrolling(position);
+		function unHighlight() {
+			spans.forEach(function(span) {
+				span.style.color = '#292d29';
+			})
 		};
 	};
 
-	function findSearchedCountry(e, v){
-		clearSelection();
-
-		if(e.keyCode === 13){
-		 	document.getElementsByTagName('input')[0].value = '';
-		 	var search = v.split(' ').join('_').toLowerCase();
-		 	var selectedCountry = document.getElementsByClassName(search)[0];
-		 	focussing(selectedCountry);
-		};
-
-	};
-
-	function focussing(x){
-		clearSelection();
-		var imageClass= x.classList[1];
-		var indexOfSelectedImageInFullArray = Array.prototype.indexOf.call(images, x);
-		var indexOfSelectedImageInOriginalsArray;
-		var position;
-		var image;
-
-		function clonesCenteringAdjustmentNeeded(img){
-			var index = Array.prototype.indexOf.call(images, img);
-			var middleClone = clones.length/2;
-			if(index<=middleClone){
-				return true;
-			}else{
-				return false;
-			}
-		};
-
-		if(x.classList.contains('clone')){
-			var originalImage = document.getElementsByClassName(imageClass)[1];
-			var index = Array.prototype.indexOf.call(originals, originalImage);
-
-			if(clonesCenteringAdjustmentNeeded(x)){
-
-				image = document.getElementsByClassName(imageClass)[1];
-
-			}else{
-
-				image = x;
-			}
-		}else{
-
-			image = x;
-			var index = Array.prototype.indexOf.call(originals, image);
-		}
-		image.style.width = imageWidth*1.1+'px';
-		image.style.height = imageHeight*1.1+'px';
-		image.classList.add('selected');
-		image.classList.add('ignoreScroll');
-		selected = document.getElementsByClassName('selected');
-		position = centeredPosition(image);
-		scrolling(position);
-	};
-
-	function scrolling(position){
-		function userScroll(){
-			if(slider.scrollLeft === 0){
-				var cloneClass = clones[0].classList[1];
-				var targetImage = document.getElementsByClassName(cloneClass)[1];
-				position = targetImage.offsetLeft;
-				slider.scrollLeft = position;
-			}else if(slider.scrollLeft >= end){
-				var targetImage = clones[clones.length-1];
-				var imageSize = targetImage.clientWidth;
-				position = (targetImage.offsetLeft)-(slider.offsetWidth-imageSize);
-				slider.scrollLeft = position;
-			}
-			requestAnimationFrame(userScroll);
-		};
-
-		function appScroll(){
-			slider.scrollLeft = position;
-		};
-
-		if(position !== undefined){
-			appScroll();
-		}else{
-			userScroll();
-		};
-	};
-
-	function centeredPosition(x){
-		console.log(x, selected);
-		var position = (x.offsetLeft)-windowMiddle+selected[0].clientWidth/2;
-		console.log(position);
-		return position;
-	};
-
-	function clearSelection(){
-		if(!document.getElementsByClassName('ignoreScroll').length){
-			var selected = document.getElementsByClassName('selected');
-			if(selected.length){
-				selected[0].style.width=imageWidth+'px';
-				selected[0].style.height=imageHeight+'px';
-				selected[0].classList.remove('selected');
-			};
-		}else{
-			document.getElementsByClassName('ignoreScroll')[0].classList.remove('ignoreScroll');
-		}
-	};
-
-	function windowResize(){
-		appendClones();
-	};
-
-	aboutClick();
 	preload();
-
 })();
-
 
 },{"./data":1}]},{},[2]);

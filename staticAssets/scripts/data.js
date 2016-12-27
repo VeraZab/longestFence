@@ -4,7 +4,7 @@ var data = {
 			['iran','tehran'],
 			['iraq','baghdad'],
 			['ireland','dublin'],
-			['mexico', 'mexico city'],
+			['mexico', 'mexico_city'],
 			['italy', 'rome'],
 			['south_sudan', 'juba'],
 			['mongolia', 'ulaanbaatar'],
@@ -25,7 +25,7 @@ var data = {
 			['cuba', 'havana'],
 			['hungary', 'budapest'],
 			['brazil', 'brasilia'],
-			['u.s.a', 'washington'],
+			['u_s_a', 'washington'],
 			['japan', 'tokyo'],
 			['luxembourg', 'luxembourg'],
 			['slovenia', 'ljubljana'],
@@ -228,7 +228,7 @@ var data = {
 			'https://www.google.ca/maps/@46.0919245,14.5126915,3a,45y,118.63h,64.45t/data=!3m6!1e1!3m4!1s WYdQk8liZdkOrDyeUHYVXQ!2e0!7i13312!8i6656!6m1!1e1',
 			'https://www.google.ca/maps/@27.480023,89.6391072,3a,90y,104.46h,50.15t/data=!3m6!1e1!3m4!1sn IwtBripEY-t9He5f0NkJw!2e0!7i13312!8i6656!6m1!1e1',
 			'https://www.google.ca/maps/place/Islamabad,+Pakistan/@33.7601919,73.0664928,3a,37.5y,170h,80. 91t/data=!3m8!1e1!3m6!1s- Ny7YdjoCiIY%2FVfp1wneNGUI%2FAAAAAAAAnNY%2FsJFxToU0VkY!2e4!3e11!6s%2F%2Flh5.googl eusercontent.com%2F- Ny7YdjoCiIY%2FVfp1wneNGUI%2FAAAAAAAAnNY%2FsJFxToU0VkY%2Fw203-h101-n-k- no%2F!7i6656!8i3328!4m2!3m1!1s0x38dfbfd07891722f:0x6059515c3bdb02b6!6m1!1e1',
-			'https://www.google.ca/maps/@41.32865,19.829555,3a,60y,333.14h,86.95t/data=!3m8!1e1!3m6!1s- GOQNrs2AVwk%2FVN4FeKTIfEI%2FAAAAAAAAKP0%2FQxKJw3ceR90!2e4!3e11!6s%2F%2Flh4.goo gleusercontent.com%2F- GOQNrs2AVwk%2FVN4FeKTIfEI%2FAAAAAAAAKP0%2FQxKJw3ceR90%2Fw203-h101-n-k- no%2F!7i9728!8i4864!6m1!1e1', 
+			'https://www.google.ca/maps/@41.32865,19.829555,3a,60y,333.14h,86.95t/data=!3m8!1e1!3m6!1s- GOQNrs2AVwk%2FVN4FeKTIfEI%2FAAAAAAAAKP0%2FQxKJw3ceR90!2e4!3e11!6s%2F%2Flh4.goo gleusercontent.com%2F- GOQNrs2AVwk%2FVN4FeKTIfEI%2FAAAAAAAAKP0%2FQxKJw3ceR90%2Fw203-h101-n-k- no%2F!7i9728!8i4864!6m1!1e1',
 			'https://www.google.ca/maps/@3.1878356,101.6991053,3a,90y,225.27h,97.19t/data=!3m6!1e1!3m4!1s aIpfvgVsUGEg_GiV9Wl1fw!2e0!7i13312!8i6656!6m1!1e1',
 			'https://www.google.ca/maps/place/Luanda,+Angola/@-8.8183851,13.2712095,3a,90y,359.9h,82.8t/da ta=!3m8!1e1!3m6!1s- q9KC_oUvqEU%2FVcEqTbcNPFI%2FAAAAAAAAaVw%2FhMYNrwIVTcE!2e4!3e11!6s%2F%2Flh5.goo gleusercontent.com%2F- q9KC_oUvqEU%2FVcEqTbcNPFI%2FAAAAAAAAaVw%2FhMYNrwIVTcE%2Fw203-h101-n-k- no%2F!7i10240!8i5120!4m2!3m1!1s0x1a51f15cdc8d2c7d:0x850c1c5c5ecc5a92!6m1!1e1',
 			'https://www.google.ca/maps/place/Nassau,+The+Bahamas/@25.0773048,-77.4117508,3a,90y,182.28 h,116.43t/data=!3m8!1e1!3m6!1s- VglhBJsOFBI%2FVICXWQgC4aI%2FAAAAAAAAAMM%2FcL4XKkPm91U!2e4!3e11!6s%2F%2Flh6.go ogleusercontent.com%2F- VglhBJsOFBI%2FVICXWQgC4aI%2FAAAAAAAAAMM%2FcL4XKkPm91U%2Fw203-h101-n-k- no%2F!7i3584!8i1792!4m2!3m1!1s0x892f7c99b981dbc9:0x2aef01d3485e50d2!6m1!1e1',
@@ -243,10 +243,10 @@ var data = {
 			'https://www.google.ca/maps/@41.6873489,44.8032639,3a,90y,86.51h,62.59t/data=!3m8!1e1!3m6!1s- N5dMzOnjkEs%2FU_u- IpVTWdI%2FAAAAAAAAAqc%2F67bXpgARHZ8!2e4!3e11!6s%2F%2Flh4.googleusercontent.com%2F -N5dMzOnjkEs%2FU_u-IpVTWdI%2FAAAAAAAAAqc%2F67bXpgARHZ8%2Fw203-h101-n-k- no%2F!7i6656!8i3328!6m1!1e1',
 			'https://www.google.ca/maps/place/Chisinau,+Moldova/@47.0021769,28.8482689,3a,90y,256.85h,75.47t/data=!3m8!1e1!3m6!1s-OQmrQn7x_E8%2FVbNUxJ-170I%2FAAAAAAABGJc%2FJstx8KqxMXs!2e4!3e11!6s%2F%2Flh5.googleusercontent.com%2F-OQmrQn7x_E8%2FVbNUxJ-170I%2FAAAAAAABGJc%2FJstx8KqxMXs%2Fw203-h101-n-k-no%2F!7i5656!8i2828!4m2!3m1!1s0x40c97c3628b769a1:0x37d1d6305749dd3c!6m1!1e1',
 			'https://www.google.ca/maps/@54.6935215,25.2737809,3a,90y,309.37h,70.72t/data=!3m6!1e1!3m4!1s 89QjjkuZKYmEWGCS8e6g5g!2e0!7i13312!8i6656!6m1!1e1',
-			'https://www.google.ca/maps/@45.7697334,16.071068,3a,60y,217.15h,73.71t/data=!3m7!1e1!3m5!1sN HyCfPFXSlj_qBB2E8wUSQ!2e0!6s%2F%2Fgeo2.ggpht.com%2Fcbk%3Fpanoid%3DNHyCfPFXSlj_qB B2E8wUSQ%26output%3Dthumbnail%26cb_client%3Dmaps_sv.tactile.gps%26thumb%3D2%26w% 3D203%26h%3D100%26yaw%3D289.44641%26pitch%3D0!7i13312!8i6656!6m1!1e1', 
+			'https://www.google.ca/maps/@45.7697334,16.071068,3a,60y,217.15h,73.71t/data=!3m7!1e1!3m5!1sN HyCfPFXSlj_qBB2E8wUSQ!2e0!6s%2F%2Fgeo2.ggpht.com%2Fcbk%3Fpanoid%3DNHyCfPFXSlj_qB B2E8wUSQ%26output%3Dthumbnail%26cb_client%3Dmaps_sv.tactile.gps%26thumb%3D2%26w% 3D203%26h%3D100%26yaw%3D289.44641%26pitch%3D0!7i13312!8i6656!6m1!1e1',
 			'https://www.google.ca/maps/place/Panama+City,+Panama/@8.967158,-79.531317,3a,75y,2h,90t/data =!3m8!1e2!3m6!1s97715692!2e1!3e10!6s%2F%2Flh3.googleusercontent.com%2Fproxy%2FANY3MQ EJ8kc6z-MkCF4RuqCOi9RvyTS4_U3b8l2PPAVqMXVBFiWulMALMIArNBZMvU2rUsj- qkreB9u8ZK9iTpTfPa5-rQ%3Dw203- h152!7i4000!8i3000!4m2!3m1!1s0x8faca8f1dbe80363:0xaba25df1f042c10e!6m1!1e1',
 			'https://www.google.ca/maps/place/Kuwait+City,+Kuwait/@29.374482,47.964777,3a,75y,142h,90t/data=!3m8!1e2!3m6!1s70285157!2e1!3e10!6s%2F%2Flh5.googleusercontent.com%2Fproxy%2FdJvMXGsyKZHLxlZU7IAbGRWR5N1HDjY6W9pEGDEMci7dTo7RC71uEazbOOw-shpensB7t_pX6EDYvcJPuw-u-K2J262lnQ%3Dw203-h152!7i2048!8i1536!4m2!3m1!1s0x3fcf9c83ce455983:0xc3ebaef5af09b90e!6m1!1e1',
-			'https://www.google.ca/maps/place/Castries+City,+St+Lucia/@14.00841,-60.992263,3a,75y,33h,90t/data=!3m8!1e2!3m6!1s-vimjUNfEHC4%2FVHZYjxwzLlI%2FAAAAAAAAmJ0%2FhtMHPEbblZ4!2e4!3e12!6s%2F%2Flh5.googleusercontent.com%2F-vimjUNfEHC4%2FVHZYjxwzLlI%2FAAAAAAAAmJ0%2FhtMHPEbblZ4%2Fs203-k-no%2F!7i1600!8i1200!4m2!3m1!1s0x8c4067a838a6d44f:0x3afffd5e87c58b99!6m1!1e1', 
+			'https://www.google.ca/maps/place/Castries+City,+St+Lucia/@14.00841,-60.992263,3a,75y,33h,90t/data=!3m8!1e2!3m6!1s-vimjUNfEHC4%2FVHZYjxwzLlI%2FAAAAAAAAmJ0%2FhtMHPEbblZ4!2e4!3e12!6s%2F%2Flh5.googleusercontent.com%2F-vimjUNfEHC4%2FVHZYjxwzLlI%2FAAAAAAAAmJ0%2FhtMHPEbblZ4%2Fs203-k-no%2F!7i1600!8i1200!4m2!3m1!1s0x8c4067a838a6d44f:0x3afffd5e87c58b99!6m1!1e1',
 			'https://www.google.ca/maps/place/Bandar+Seri+Begawan,+Brunei/@4.894355,114.9414989,3a,45y,3 46.13h,98.52t/data=!3m8!1e1!3m6!1s- pM8YgdlGQMI%2FVU8JSHFQfrI%2FAAAAAAAACTY%2FDwM7EbCv_WQ!2e4!3e11!6s%2F%2Flh4.g oogleusercontent.com%2F- pM8YgdlGQMI%2FVU8JSHFQfrI%2FAAAAAAAACTY%2FDwM7EbCv_WQ%2Fw203-h101-n-k- no%2F!7i4000!8i2000!4m2!3m1!1s0x3222f5b0540b731f:0xeeacf8c47cbae84b!6m1!1e1',
 			'https://www.google.ca/maps/place/Cairo,+Cairo+Governorate,+Egypt/@30.0626428,31.24569,3a,30y, 241.8h,90.41t/data=!3m8!1e1!3m6!1s- ZBOxCZNBVmg%2FUOgDpST5j3I%2FAAAAAAAAHmg%2FdxTgTQ6A7Es!2e4!3e11!6s%2F%2Flh6.g oogleusercontent.com%2F- ZBOxCZNBVmg%2FUOgDpST5j3I%2FAAAAAAAAHmg%2FdxTgTQ6A7Es%2Fw277-h100-n-k- no%2F!7i4454!8i1606!4m2!3m1!1s0x14583fa60b21beeb:0x79dfb296e8423bba!6m1!1e1',
 			'https://www.google.ca/maps/place/Lome,+Togo/@6.1887017,1.1607913,3a,37.5y,134.41h,72.42t/data=!3m8!1e1!3m6!1s-8aY7BocHt6s%2FVoFh6ZREYtI%2FAAAAAAAAAFI%2FQvta3hp9H3o!2e4!3e11!6s%2F%2Flh4.googleusercontent.com%2F-8aY7BocHt6s%2FVoFh6ZREYtI%2FAAAAAAAAAFI%2FQvta3hp9H3o%2Fw203-h101-n-k-no%2F!7i10240!8i5120!4m2!3m1!1s0x1023e1c113185419:0x3224b5422caf411d!6m1!1e1',
@@ -309,8 +309,8 @@ var data = {
 			'https://www.google.ca/maps/@45.3271983,-75.6565743,3a,37.5y,300.71h,82.69t/data=!3m6!1e1!3m4 !1sCWl6VHIPo-mgNbVA4VEHxQ!2e0!7i13312!8i6656!6m1!1e1',
 			'https://www.google.ca/maps/@42.499929,1.5120457,3a,90y,120.54h,79.44t/data=!3m6!1e1!3m4!1sDl UDx1HT7o9_Olc7ldeWow!2e0!7i13312!8i6656!6m1!1e1',
 			'https://www.google.ca/maps/@64.1493819,-21.9672337,3a,37.5y,152.85h,75.55t/data=!3m6!1e1!3m4!1s6XLiQL8tRdsvIc9kbzQCQQ!2e0!7i13312!8i6656!6m1!1e1',
-			'https://www.google.ca/maps/@25.0252157,121.5597752,3a,90y,18.78h,74.35t/data=!3m6!1e1!3m4!1s 5PsFp5y6VjK5kkfI0c66bw!2e0!7i13312!8i6656!6m1!1e1', 
-			'https://www.google.ca/maps/@46.9484645,7.4585344,3a,90y,355.13h,70.97t/data=!3m6!1e1!3m4!1sr uX1ZyHHUvXozeNLyQSZDQ!2e0!7i13312!8i6656!6m1!1e1', 
+			'https://www.google.ca/maps/@25.0252157,121.5597752,3a,90y,18.78h,74.35t/data=!3m6!1e1!3m4!1s 5PsFp5y6VjK5kkfI0c66bw!2e0!7i13312!8i6656!6m1!1e1',
+			'https://www.google.ca/maps/@46.9484645,7.4585344,3a,90y,355.13h,70.97t/data=!3m6!1e1!3m4!1sr uX1ZyHHUvXozeNLyQSZDQ!2e0!7i13312!8i6656!6m1!1e1',
 			'https://www.google.ca/maps/@60.1624699,24.9554656,3a,90y,55.18h,65.65t/data=!3m6!1e1!3m4!1sH cwXyf2yIxw65ckSFBnvVg!2e0!7i13312!8i6656!6m1!1e1',
 			'https://www.google.ca/maps/@51.5002353,-0.1260929,3a,90y,95.31h,60.8t/data=!3m6!1e1!3m4!1sPR 03qao-Uww3I1n0SnWTcw!2e0!7i13312!8i6656!6m1!1e1',
 			'https://www.google.ca/maps/@35.1608467,33.342514,3a,90y,263.74h,58.19t/data=!3m8!1e1!3m6!1s- QYY0kMwn4gQ%2FVDaLUJfBvlI%2FAAAAAAAAARE%2FKLVvRkMRg- Y!2e4!3e11!6s%2F%2Flh4.googleusercontent.com%2F- QYY0kMwn4gQ%2FVDaLUJfBvlI%2FAAAAAAAAARE%2FKLVvRkMRg-Y%2Fw203-h101-n-k- no%2F!7i8704!8i4352!6m1!1e1',
@@ -395,7 +395,4 @@ var data = {
 		]
 	};
 
-
-
-//look at appostrophies, and -
 module.exports = data;

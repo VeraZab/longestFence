@@ -1,124 +1,58 @@
-@font-face { font-family: 'ProductSansR'; src: url('/stylesheets/ProductSansReg.ttf'); }
+@font-face { font-family: 'Marche'; src: url('/stylesheets/Marche.otf'); }
 
 body, html{
 	width: 100%;
 	height: 100%;
 	margin: 0 0 0 0;
-	font-size: 25px;
-	color: black;
-	font-family: 'ProductSansR';
+	font-size: 3.4vw;
+	color: #292d29;
+	font-family: 'Marche';
+	white-space: nowrap;
 	overflow: hidden;
+	background-color: #669933;
+	letter-spacing: 4px;
 }
 
 ::-webkit-scrollbar {
     display: none;
 }
 
-#header{
-	width: 100%;
-	height: 20%;
-	display: flex;
-	align-items: center;
-	position: fixed;
-	left:0;
-	top: 0;
-	padding: 0 2.5em;
-}
-
 #title {
-	font-size: 1.2em;
-	position: fixed;
-	top: 4em;
-	left: calc(50% - 6.2em);
-}
-
-
-#add, #substract {
+	margin-top: 8%;
 	text-align: center;
+	margin-left: 10px;
 }
 
-#marker{
-	width: 4em;
-	height:1em;
-	position: fixed;
-	bottom: 5em;
-	left: calc(50% - 2em);
+#title:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  text-align: center;
 }
-
-
-input[type="text"]{
-	-webkit-appearance: none;
-	font-size: 1em;
-	line-height: 1.5em;
-	height: 24px;
-	width: 50px;
-	margin: 0 0.5em;
-	border: 1px solid black;
-}
-input:focus {
-	outline: 0;
-}
-
-.selected{
-	margin-bottom: -0.5em;
-	margin-right: 0.5em;
-	margin-left: 0.5em;
-	margin-top: 0.5em;
-	box-shadow:0em 0em 1em rgba(247,239,247,0.95);
-}
-
 
 #container{
-	height: 100%;
+	height: 50%;
 	display: flex;
-	align-items: center;
+	position: relative;
+	margin-top: 5%;
 }
 
 #fences{
-	width: 100%;
-	white-space: nowrap;
-	overflow-x: auto;
-	overflow-y:hidden;
-	padding-bottom: 20px;
-	padding-top: 10px;
+	height: 90%;
+	overflow-x: visible;
+	overflow: scroll;
 }
 
-img:not(#marker):not(#loader):not(#add):not(#sub){
-	width: 20%;
+#description {
+	position: absolute;;
+	bottom: 0px;
+}
+
+img:not(#marker):not(#loader){
+	width: 25%;
 	display: inline-block;
 	box-sizing: border-box;
-	cursor: url(/images/cursor.png)60 0, auto;
 	-webkit-transform: translateZ(0);
 	-webkit-transform: translate3d(0,0,0);
-}
-
-#add{
-	height: 20px;
-	width: 20px;
-	padding-top: 2px;
-	margin: 10px;
-}
-
-#sub{
-	padding-top: 2px;
-	width: 20px;
-	padding-bottom: 7px;
-}
-
-#about{
-	width: 100%;
-	height: 5%;
-	text-align: center;
-	font-size: 1em;
-	position: fixed;
-	left:0;
-	bottom: 0;
-	border: 1px solid black;
-	background-color: white;
-}
-
-#loader{
-	margin-left: calc(50% - 0.6em);
-	height: 1.2em;
-	width: 1.2em;
+	cursor: url(/images/cursor3.png)60 0, auto;
 }

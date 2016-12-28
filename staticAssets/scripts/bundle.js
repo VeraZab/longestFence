@@ -403,6 +403,7 @@ module.exports = data;
 	var data = require('./data');
 	var countries = data.countries;
 	var slider = document.getElementById('container');
+	var title = document.getElementById('title');
 	var description = document.getElementById('description');
 	var descriptions = document.getElementsByTagName('span');
 	var fences = document.getElementById('fences');
@@ -457,6 +458,8 @@ module.exports = data;
 			[].slice.call(document.images).forEach(function(image) {
 				image.style.display = 'inline-block';
 			});
+			title.style.display='block';
+			
 			imageWidth = document.images[3].getBoundingClientRect().width;
 			sliderStartForward = document.images[3].getBoundingClientRect().right;
 			sliderEndForward = document.images[199].getBoundingClientRect().left;
@@ -468,6 +471,7 @@ module.exports = data;
 	function sliderStart(){
 		fences.scrollLeft = sliderStartForward;
 
+		window.addEventListener('resize', recalculate);
 		fences.addEventListener('scroll', scrolling);
 		fences.addEventListener('mouseover', highlight);
 		fences.addEventListener('mouseout', unHighlight);
@@ -504,6 +508,10 @@ module.exports = data;
 			spans.forEach(function(span) {
 				span.style.color = '#292d29';
 			})
+		};
+
+		function recalculate() {
+			imageWidth = document.images[0].getBoundingClientRect().width;
 		};
 	};
 

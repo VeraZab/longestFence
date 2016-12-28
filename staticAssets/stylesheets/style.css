@@ -17,38 +17,24 @@ body, html{
     display: none;
 }
 
-#title {
-	margin-top: 8%;
-	text-align: center;
-	margin-left: 10px;
-}
-
-#title:after {
-  content: "";
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-}
-
 #container{
-	height: 50%;
-	display: flex;
 	position: relative;
-	margin-top: 5%;
+  	top: 50%;
+  	transform: translateY(-50%);
+}
+
+#title {
+	text-align: center;
+	display: none;
 }
 
 #fences{
-	height: 90%;
-	overflow-x: visible;
 	overflow: scroll;
+	margin-top: 3vh;
+	margin-bottom: 3vh;
 }
 
-#description {
-	position: absolute;;
-	bottom: 0px;
-}
-
-img:not(#marker):not(#loader){
+img{
 	width: 25%;
 	display: inline-block;
 	box-sizing: border-box;

@@ -1,4 +1,4 @@
-@font-face { font-family: 'Marche'; src: url('/stylesheets/Marche.otf'); }
+@font-face { font-family: 'Marche'; src: url('./Marche.otf'); }
 
 body, html{
 	width: 100%;

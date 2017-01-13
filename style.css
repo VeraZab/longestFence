@@ -40,5 +40,5 @@ img{
 	box-sizing: border-box;
 	-webkit-transform: translateZ(0);
 	-webkit-transform: translate3d(0,0,0);
-	cursor: url(/images/cursor3.png)60 0, auto;
+	cursor: url('http://res.cloudinary.com/dw9qh96xf/image/upload/v1483693892/cursor3.png')60 0, auto;
 }

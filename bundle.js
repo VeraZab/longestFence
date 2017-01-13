@@ -424,7 +424,8 @@ module.exports = data;
 	function preload(){
 		for (var x = 1; x <= 195; x++) {
 			var picture = document.createElement('img');
-			picture.src = '/images/' + x + '.jpg';
+			picture.srcset = `http://res.cloudinary.com/dw9qh96xf/image/upload/c_scale,w_200/v1483693892/${x}.jpg 200w, http://res.cloudinary.com/dw9qh96xf/image/upload/c_scale,w_300/v1483693892/${x}.jpg 300w, http://res.cloudinary.com/dw9qh96xf/image/upload/c_scale,w_500/v1483693892/${x}.jpg 500w`;
+			picture.sizes = '100%';
 			picture.style.display = 'none';
 			var a = document.createElement('a');
 			a.href = data.sources[x-1];
@@ -459,7 +460,7 @@ module.exports = data;
 				image.style.display = 'inline-block';
 			});
 			title.style.display='block';
-			
+
 			imageWidth = document.images[3].getBoundingClientRect().width;
 			sliderStartForward = document.images[3].getBoundingClientRect().right;
 			sliderEndForward = document.images[199].getBoundingClientRect().left;
